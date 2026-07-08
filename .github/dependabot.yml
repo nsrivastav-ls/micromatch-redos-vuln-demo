@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    # Dependabot security alerts (the GHSA-based CVE alerts, separate from
+    # this version-update config) are controlled in:
+    #   Repo Settings -> Code security and analysis -> Dependabot alerts
+    # They read directly from package-lock.json against the GitHub
+    # Advisory Database, so make sure the lockfile is committed.
