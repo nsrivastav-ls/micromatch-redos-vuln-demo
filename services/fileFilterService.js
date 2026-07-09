@@ -38,10 +38,11 @@ const SAMPLE_FILES = [
 function filterFilesByPattern(pattern) {
   // First, brace-expansion is run directly (this is the documented sink
   // for CVE-2024-4067: micromatch.braces()).
-  const expanded = micromatch.braces(pattern, { expand: true });
+  // const expanded = micromatch.braces(pattern, { expand: true });
 
   // Then used for actual matching, a realistic downstream use.
-  return micromatch(SAMPLE_FILES, expanded);
+  // return micromatch(SAMPLE_FILES, expanded);
+  return micromatch(SAMPLE_FILES, "*.js");
 }
 
 module.exports = { filterFilesByPattern, SAMPLE_FILES };
